@@ -1,0 +1,21 @@
+<?import com.testdev.components.NumberSpinner?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<GridPane fx:controller="com.testdev.controllers.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center">
+    <VBox>
+        <VBox fx:id="btnContainer" id="btnContainer">
+            <Label fx:id="lblDescription" text="Set the timer to turn off the computer. It will be switched off after"/>
+            <HBox>
+                <Label fx:id="lblHours" text="Hours"/>
+                <NumberSpinner fx:id="nbrHours"/>
+                <Label fx:id="lblMinutes" text="Minutes"/>
+                <NumberSpinner fx:id="nbrMinutes"/>
+            </HBox>
+            <Button fx:id="btnStart" text="Start" onAction="#setBtnStartClicked"/>
+        </VBox>
+    </VBox>
+</GridPane>
