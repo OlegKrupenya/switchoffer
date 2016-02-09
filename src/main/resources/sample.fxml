@@ -3,19 +3,33 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Pane?>
 <GridPane fx:controller="com.testdev.controllers.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center">
     <VBox>
         <VBox fx:id="btnContainer" id="btnContainer" spacing="10">
-            <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
-            <Label fx:id="lblDescription" text="Set the timer to turn off the computer. It will be switched off after"/>
+            <padding>
+                <Insets top="25" right="10" bottom="25" left="10"/>
+            </padding>
+            <Label fx:id="lblDescription"
+                   text="Set the timer to shut down the computer. It will be switched off after: ">
+                <padding>
+                    <Insets top="10" right="0" bottom="10" left="0"/>
+                </padding>
+            </Label>
             <HBox spacing="10">
                 <Label fx:id="lblHours" text="Hours"/>
-                <Spinner fx:id="nbrHours" />
+                <Spinner fx:id="nbrHours" editable="true"/>
                 <Label fx:id="lblMinutes" text="Minutes"/>
-                <Spinner fx:id="nbrMinutes"/>
+                <Spinner fx:id="nbrMinutes" editable="true"/>
             </HBox>
-            <Button fx:id="btnStart" text="Start" onAction="#setBtnStartClicked"/>
+            <HBox>
+                <padding>
+                    <Insets top="5" right="0" bottom="15" left="0"/>
+                </padding>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Button fx:id="btnStart" text="Start" onAction="#setBtnStartClicked" minWidth="100"/>
+            </HBox>
         </VBox>
     </VBox>
 </GridPane>
