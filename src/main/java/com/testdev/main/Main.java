@@ -15,8 +15,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Controller controller = SpringFXMLLoader.load("/sample.fxml");
-        Scene scene = new Scene((Parent) controller.getView());
-        primaryStage.setResizable(true);
+        Scene scene = new Scene((Parent) controller.getView(), 450, 100);
+        primaryStage.setResizable(false);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
