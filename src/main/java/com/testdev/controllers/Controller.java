@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Spinner;
 import javafx.scene.layout.VBox;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -14,18 +15,10 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class Controller {
 
-    /**
-     * Container of the buttons.
-     */
     @FXML
-    private VBox btnContainer;
-    /**
-     * Label that displays information to the user.
-     */
+    private Spinner nbrHours;
     @FXML
-    private Label lblResult;
-    @FXML
-    private Button btnStart;
+    private Spinner nbrMinutes;
 
     /**
      * A loaded object hierarchy from a FXML document.
@@ -38,13 +31,14 @@ public class Controller {
 
     @FXML
     public void setBtnStartClicked(ActionEvent actionEvent) {
-        int hours = 0;
-        int minutes = 0;
+        int hours = (Integer) nbrHours.getValue();
+        int minutes = (Integer) nbrMinutes.getValue();
         this.shutdownService.shutdown(hours, minutes);
     }
 
     /**
      * Sets the view.
+     *
      * @param view The loaded object hierarchy.
      */
     public void setView(Node view) {
