@@ -39,6 +39,6 @@
         </padding>
         <Pane HBox.hgrow="ALWAYS"/>
         <Button fx:id="btnOk" text="OK" onAction="#setBtnStartClicked" minWidth="70"/>
-        <Button fx:id="btnCancel" text="Cancel" onAction="#setBtnStartClicked" minWidth="70"/>
+        <Button fx:id="btnCancel" text="Cancel" onAction="#setBtnCancelClicked" minWidth="70"/>
     </HBox>
 </GridPane>

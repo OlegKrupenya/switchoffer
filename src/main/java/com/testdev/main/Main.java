@@ -15,7 +15,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Controller controller = SpringFXMLLoader.load("/sample.fxml");
-        Scene scene = new Scene((Parent) controller.getView(), 260, 240);
+        Scene scene = new Scene((Parent) controller.getView(), 255, 240);
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Shut down the computer");

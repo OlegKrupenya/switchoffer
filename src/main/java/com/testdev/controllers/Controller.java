@@ -19,6 +19,8 @@ public class Controller {
     private Spinner nbrHours;
     @FXML
     private Spinner nbrMinutes;
+    @FXML
+    private Spinner nbrSeconds;
 
     /**
      * A loaded object hierarchy from a FXML document.
@@ -31,23 +33,28 @@ public class Controller {
 
     @FXML
     public void setBtnStartClicked(ActionEvent actionEvent) {
-        this.shutdownService.shutdown((Integer) nbrHours.getValue(), (Integer) nbrMinutes.getValue());
+        this.shutdownService.shutdown((Integer) nbrHours.getValue(), (Integer) nbrMinutes.getValue(), (Integer) nbrSeconds.getValue());
         disableComponents();
+    }
+
+    @FXML
+    public void setBtnCancelClicked(ActionEvent actionEvent) {
+        this.shutdownService.cancel();
+        enableComponents();
     }
 
     private void disableComponents() {
         nbrHours.setDisable(true);
         nbrMinutes.setDisable(true);
+        nbrSeconds.setDisable(true);
         btnOk.setDisable(true);
     }
 
-    /**
-     * Sets the view.
-     *
-     * @param view The loaded object hierarchy.
-     */
-    public void setView(Node view) {
-        this.view = view;
+    private void enableComponents() {
+        nbrHours.setDisable(false);
+        nbrMinutes.setDisable(false);
+        nbrSeconds.setDisable(false);
+        btnOk.setDisable(false);
     }
 
     /**
@@ -57,7 +64,12 @@ public class Controller {
         return view;
     }
 
-    public void setShutdownService(ShutdownService shutdownService) {
-        this.shutdownService = shutdownService;
+    /**
+     * Sets the view.
+     *
+     * @param view The loaded object hierarchy.
+     */
+    public void setView(Node view) {
+        this.view = view;
     }
 }
