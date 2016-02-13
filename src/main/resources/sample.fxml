@@ -7,13 +7,13 @@
 <GridPane fx:controller="com.testdev.controllers.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" vgap="10" hgap="10">
     <padding>
-        <Insets top="25" right="0" bottom="25" left="0"/>
+        <Insets top="10" right="0" bottom="10" left="25"/>
     </padding>
     <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="5">
         <padding>
             <Insets bottom="10"/>
         </padding>
-        <Label text="Set the timer to shut down the computer."/>
+        <Label text="Set the timer to shut down your computer."/>
         <Label text="It will be switched off after:"/>
     </VBox>
 
@@ -33,9 +33,9 @@
         <Spinner fx:id="nbrSeconds" editable="true" maxWidth="100" min="1" max="60" initialValue="1"/>
     </HBox>
 
-    <HBox GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.columnSpan="2" spacing="5">
+    <HBox GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.columnSpan="2" spacing="3">
         <padding>
-            <Insets top="15"/>
+            <Insets top="20"/>
         </padding>
         <Pane HBox.hgrow="ALWAYS"/>
         <Button fx:id="btnOk" text="OK" onAction="#setBtnStartClicked" minWidth="70"/>
