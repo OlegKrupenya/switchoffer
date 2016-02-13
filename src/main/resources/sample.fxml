@@ -5,31 +5,40 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.Pane?>
 <GridPane fx:controller="com.testdev.controllers.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center">
-    <VBox>
-        <VBox fx:id="btnContainer" id="btnContainer" spacing="10">
-            <padding>
-                <Insets top="25" right="10" bottom="25" left="10"/>
-            </padding>
-            <Label fx:id="lblDescription"
-                   text="Set the timer to shut down the computer. It will be switched off after: ">
-                <padding>
-                    <Insets top="10" right="0" bottom="10" left="0"/>
-                </padding>
-            </Label>
-            <HBox spacing="10">
-                <Label fx:id="lblHours" text="Hours"/>
-                <Spinner fx:id="nbrHours" editable="true" min="0" max="2147483647" initialValue="0"/>
-                <Label fx:id="lblMinutes" text="Minutes"/>
-                <Spinner fx:id="nbrMinutes" editable="true" min="1" max="60" initialValue="1"/>
-            </HBox>
-            <HBox>
-                <padding>
-                    <Insets top="5" right="0" bottom="15" left="0"/>
-                </padding>
-                <Pane HBox.hgrow="ALWAYS"/>
-                <Button fx:id="btnStart" text="Start" onAction="#setBtnStartClicked" minWidth="100"/>
-            </HBox>
-        </VBox>
+          xmlns:fx="http://javafx.com/fxml" alignment="center" vgap="10" hgap="10">
+    <padding>
+        <Insets top="25" right="0" bottom="25" left="0"/>
+    </padding>
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="5">
+        <padding>
+            <Insets bottom="10"/>
+        </padding>
+        <Label text="Set the timer to shut down the computer."/>
+        <Label text="It will be switched off after:"/>
     </VBox>
+
+    <Label fx:id="lblHours" text="Hours" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <HBox GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.columnSpan="2">
+        <Pane HBox.hgrow="ALWAYS"/>
+        <Spinner fx:id="nbrHours" editable="true" maxWidth="100" min="0" max="2147483647" initialValue="0"/>
+    </HBox>
+    <Label fx:id="lblMinutes" text="Minutes" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <HBox GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.columnSpan="2">
+        <Pane HBox.hgrow="ALWAYS"/>
+        <Spinner fx:id="nbrMinutes" editable="true" maxWidth="100" min="0" max="60" initialValue="0"/>
+    </HBox>
+    <Label fx:id="lblSeconds" text="Seconds" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <HBox GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.columnSpan="2">
+        <Pane HBox.hgrow="ALWAYS"/>
+        <Spinner fx:id="nbrSeconds" editable="true" maxWidth="100" min="1" max="60" initialValue="1"/>
+    </HBox>
+
+    <HBox GridPane.columnIndex="2" GridPane.rowIndex="4" GridPane.columnSpan="2" spacing="5">
+        <padding>
+            <Insets top="15"/>
+        </padding>
+        <Pane HBox.hgrow="ALWAYS"/>
+        <Button fx:id="btnOk" text="OK" onAction="#setBtnStartClicked" minWidth="70"/>
+        <Button fx:id="btnCancel" text="Cancel" onAction="#setBtnStartClicked" minWidth="70"/>
+    </HBox>
 </GridPane>

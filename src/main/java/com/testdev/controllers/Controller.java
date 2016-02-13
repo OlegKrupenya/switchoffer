@@ -5,9 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
-import javafx.scene.layout.VBox;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -16,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class Controller {
 
     @FXML
-    private Button btnStart;
+    private Button btnOk;
     @FXML
     private Spinner nbrHours;
     @FXML
@@ -40,7 +38,7 @@ public class Controller {
     private void disableComponents() {
         nbrHours.setDisable(true);
         nbrMinutes.setDisable(true);
-        btnStart.setDisable(true);
+        btnOk.setDisable(true);
     }
 
     /**
