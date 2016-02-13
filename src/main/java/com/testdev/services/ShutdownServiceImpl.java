@@ -16,17 +16,13 @@ public class ShutdownServiceImpl implements ShutdownService {
     public void shutdown(int hours, int minutes) {
         int delay = minutes + hours * 60;
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-        scheduler.scheduleAtFixedRate(new Shutdown(), delay, 8, TimeUnit.MINUTES);
-    }
-
-    private class Shutdown implements Runnable {
-        @Override
-        public void run() {
+        scheduler.scheduleAtFixedRate(() -> {
             try {
                 Runtime.getRuntime().exec("shutdown -s");
             } catch (IOException e) {
+                // TODO: logger + message on the form
                 e.printStackTrace();
             }
-        }
+        }, delay, 8, TimeUnit.MINUTES);
     }
 }

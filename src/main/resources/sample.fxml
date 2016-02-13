@@ -21,7 +21,7 @@
                 <Label fx:id="lblHours" text="Hours"/>
                 <Spinner fx:id="nbrHours" editable="true" min="0" max="2147483647" initialValue="0"/>
                 <Label fx:id="lblMinutes" text="Minutes"/>
-                <Spinner fx:id="nbrMinutes" editable="true" min="0" max="60" initialValue="0"/>
+                <Spinner fx:id="nbrMinutes" editable="true" min="1" max="60" initialValue="1"/>
             </HBox>
             <HBox>
                 <padding>

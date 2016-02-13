@@ -16,6 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class Controller {
 
     @FXML
+    private Button btnStart;
+    @FXML
     private Spinner nbrHours;
     @FXML
     private Spinner nbrMinutes;
@@ -31,9 +33,14 @@ public class Controller {
 
     @FXML
     public void setBtnStartClicked(ActionEvent actionEvent) {
-        int hours = (Integer) nbrHours.getValue();
-        int minutes = (Integer) nbrMinutes.getValue();
-        this.shutdownService.shutdown(hours, minutes);
+        this.shutdownService.shutdown((Integer) nbrHours.getValue(), (Integer) nbrMinutes.getValue());
+        disableComponents();
+    }
+
+    private void disableComponents() {
+        nbrHours.setDisable(true);
+        nbrMinutes.setDisable(true);
+        btnStart.setDisable(true);
     }
 
     /**
