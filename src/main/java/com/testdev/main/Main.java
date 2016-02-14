@@ -18,7 +18,7 @@ public class Main extends Application {
         Scene scene = new Scene((Parent) controller.getView(), 255, 240);
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Shut down the computer");
+        primaryStage.setTitle("Switchoffer");
         primaryStage.show();
     }
 
