@@ -45,7 +45,7 @@ public class ShutdownServiceImpl implements ShutdownService {
         scheduler = Executors.newScheduledThreadPool(1);
         future = scheduler.scheduleAtFixedRate(() -> {
             try {
-                Runtime.getRuntime().exec("shutdown -s");
+                Runtime.getRuntime().exec("shutdown -s -t 0");
             } catch (IOException e) {
                 // TODO: logger + message on the form
                 e.printStackTrace();

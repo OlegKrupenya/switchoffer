@@ -13,16 +13,26 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author oleg.krupenya
  */
 public class Controller {
-
+    /**
+     * {@link Button} to start the timer
+     */
     @FXML
     private Button btnOk;
+    /**
+     * {@link Spinner} to the hours
+     */
     @FXML
     private Spinner nbrHours;
+    /**
+     * {@link Spinner} to the minutes
+     */
     @FXML
     private Spinner nbrMinutes;
+    /**
+     * {@link Spinner} to the seconds
+     */
     @FXML
     private Spinner nbrSeconds;
-
     /**
      * A loaded object hierarchy from a FXML document.
      */
