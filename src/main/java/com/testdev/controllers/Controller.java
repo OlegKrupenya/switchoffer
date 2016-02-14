@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Controller of the application.
+ * @author oleg.krupenya
  */
 public class Controller {
 

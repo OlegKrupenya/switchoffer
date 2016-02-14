@@ -7,7 +7,7 @@
 <GridPane fx:controller="com.testdev.controllers.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" vgap="10" hgap="10">
     <padding>
-        <Insets top="10" right="-40" bottom="0" left="0"/>
+        <Insets top="10" right="-35" bottom="0" left="0"/>
     </padding>
     <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="5">
         <padding>

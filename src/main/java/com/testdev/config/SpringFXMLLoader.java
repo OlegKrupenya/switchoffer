@@ -11,7 +11,7 @@ import java.io.InputStream;
 
 /**
  * Custom loader that is needed for Spring in JavaFX applications.
- * Created by oleh.krupenia on 7/17/2015.
+ * @author oleg.krupenya
  */
 public class SpringFXMLLoader {
     private static final ApplicationContext APPLICATION_CONTEXT = new AnnotationConfigApplicationContext(AppConfig.class);

@@ -9,22 +9,33 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * Implementation of the {@link ShutdownService}
  * @author oleh.krupenia.
  */
 @Component("shutdownService")
 public class ShutdownServiceImpl implements ShutdownService {
-
+    /**
+     * Number of seconds in one minute to calculate the total delay.
+     */
     public static final int SECONDS_IN_MINUTE = 60;
+    /**
+     * Number of seconds in one hour to calculate the total delay.
+     */
     public static final int SECONDS_IN_HOUR = 3600;
-
+    /**
+     * Stored {@link ScheduledFuture} object to cancel the task.
+     */
     private ScheduledFuture<?> future;
+    /**
+     * Stored {@link ScheduledExecutorService} to shut down the executor after cancelling the task.
+     */
     private ScheduledExecutorService scheduler;
 
     @Override
     public void cancel() {
         if (future != null && scheduler != null) {
-            scheduler.shutdownNow();
             future.cancel(true);
+            scheduler.shutdownNow();
         }
     }
 

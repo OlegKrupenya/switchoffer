@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * Spring configuration of the application.
- * Created by oleh.krupenia on 7/17/2015.
+ * @author oleg.krupenya
  */
 @Configuration
 @ComponentScan("com.testdev.services")
