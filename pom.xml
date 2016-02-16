@@ -61,6 +61,9 @@
                 <configuration>
                     <vendor>Oleg Krupenya</vendor>
                     <mainClass>com.testdev.main.Main</mainClass>
+                    <verbose>true</verbose>
+                    <bundler>EXE</bundler>
+                    <additionalAppResources>src/main/deploy/package/windows</additionalAppResources>
                 </configuration>
                 <executions>
                     <execution>
