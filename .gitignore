@@ -36,3 +36,5 @@ target
 **/.nb-gradle-properties
 
 /SBSServer/db/sql/generated/*.sql
+
+switchoffer.log
