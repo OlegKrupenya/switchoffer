@@ -60,7 +60,7 @@
                 <version>8.2.0</version>
                 <configuration>
                     <vendor>Oleg Krupenya</vendor>
-                    <mainClass>com.testdev.main.Main</mainClass>
+                    <mainClass>com.testdev.main.SwitchOffer</mainClass>
                     <verbose>true</verbose>
                     <bundler>EXE</bundler>
                     <additionalAppResources>src/main/deploy/package/windows</additionalAppResources>
