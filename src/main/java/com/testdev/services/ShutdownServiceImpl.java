@@ -1,5 +1,7 @@
 package com.testdev.services;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -22,6 +24,10 @@ public class ShutdownServiceImpl implements ShutdownService {
      * Number of seconds in one hour to calculate the total delay.
      */
     public static final int SECONDS_IN_HOUR = 3600;
+    /**
+     * Logger.
+     */
+    private static final Logger LOGGER = LoggerFactory.getLogger(ShutdownServiceImpl.class);
     /**
      * Stored {@link ScheduledFuture} object to cancel the task.
      */
@@ -47,8 +53,7 @@ public class ShutdownServiceImpl implements ShutdownService {
             try {
                 Runtime.getRuntime().exec("shutdown -s -t 0");
             } catch (IOException e) {
-                // TODO: logger + message on the form
-                e.printStackTrace();
+                LOGGER.error("Unable to shut down the computer", e);
             }
         }, delay, 1, TimeUnit.SECONDS);
     }
