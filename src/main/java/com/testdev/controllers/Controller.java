@@ -1,11 +1,12 @@
 package com.testdev.controllers;
 
 import com.testdev.services.ShutdownService;
-import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Spinner;
+import javafx.scene.input.KeyEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -57,6 +58,24 @@ public class Controller {
      */
     public void setView(Node view) {
         this.view = view;
+        addEventFilters();
+    }
+
+    /**
+     * Creates key handler that prevents input of all characters except digits
+     */
+    private void addEventFilters() {
+        EventHandler<KeyEvent> keyPressedEventHandler = event -> {
+            String character = event.getCharacter();
+            if (character != null) {
+                if (!Character.isDigit(character.charAt(0))) {
+                    event.consume();
+                }
+            }
+        };
+        this.nbrHours.addEventFilter(KeyEvent.KEY_TYPED, keyPressedEventHandler);
+        this.nbrSeconds.addEventFilter(KeyEvent.KEY_TYPED, keyPressedEventHandler);
+        this.nbrMinutes.addEventFilter(KeyEvent.KEY_TYPED, keyPressedEventHandler);
     }
 
     /**
@@ -70,16 +89,6 @@ public class Controller {
     }
 
     /**
-     * Cancels the timer.
-     * Enables all components on the form.
-     */
-    @FXML
-    public void setBtnCancelClicked() {
-        this.shutdownService.cancel();
-        enableComponents();
-    }
-
-    /**
      * Disables all input fields and OK button when the user started the timer.
      */
     private void disableComponents() {
@@ -87,6 +96,16 @@ public class Controller {
         nbrMinutes.setDisable(true);
         nbrSeconds.setDisable(true);
         btnOk.setDisable(true);
+    }
+
+    /**
+     * Cancels the timer.
+     * Enables all components on the form.
+     */
+    @FXML
+    public void setBtnCancelClicked() {
+        this.shutdownService.cancel();
+        enableComponents();
     }
 
     /**
