@@ -11,11 +11,11 @@ import javafx.stage.Stage;
  * Main class.
  * @author oleg.krupenya
  */
-public class Main extends Application {
+public class SwitchOffer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Controller controller = SpringFXMLLoader.load("/sample.fxml");
+        Controller controller = SpringFXMLLoader.load("/switchoffer.fxml");
         Scene scene = new Scene((Parent) controller.getView(), 255, 240);
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
