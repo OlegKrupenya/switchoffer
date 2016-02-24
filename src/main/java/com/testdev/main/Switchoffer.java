@@ -19,7 +19,7 @@ public class SwitchOffer extends Application {
         Scene scene = new Scene((Parent) controller.getView(), 255, 240);
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Switchoffer");
+        primaryStage.setTitle("SwitchOffer");
         primaryStage.show();
     }
 
