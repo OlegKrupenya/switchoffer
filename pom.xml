@@ -14,6 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>4.2.4.RELEASE</spring.version>
         <logback.version>1.1.5</logback.version>
+        <groovy.version>2.4.3</groovy.version>
         <jcl.slf4j.version>1.7.16</jcl.slf4j.version>
     </properties>
 
@@ -48,6 +49,11 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>${groovy.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
